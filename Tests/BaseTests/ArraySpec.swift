@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+import XCTest
 import Base
 
 
@@ -27,7 +28,11 @@ class ArraySpec: QuickSpec {
                               Set([1,2]),
                               Set([0,1,2]),
                              ])
-                expect(a).to(equal(b))
+                do {
+                    try expect(a).to(equal(b))
+                } catch {
+                    XCTFail()
+                }
             }
             
             it("can make combinations of subsequent elements - with strings") {
@@ -46,7 +51,11 @@ class ArraySpec: QuickSpec {
                               Set(["a1","a2"]),
                               Set(["a0","a1","a2"]),
                 ])
-                expect(a).to(equal(b))
+                do {
+                    try expect(a).to(equal(b))
+                } catch {
+                    XCTFail()
+                }
             }
             
             

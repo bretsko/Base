@@ -1,40 +1,5 @@
 
-
-public typealias CaseIterableT = CaseIterable & Hashable
-
-public extension CaseIterable {
-
-    ///Note: case value and name can be different
-    init?(caseName: Str) {
-        for v in Self.allCases where "\(v)" == caseName {
-            self = v
-            return
-        }
-        return nil
-    }
-    //TODO: try use HasRandomCaseT
-    /// crashes if enum is empty
-    static var randomCase: Self {
-        Array(allCases)[Int.rand(numCases)]
-    }
-    static var allCaseNames: Set<Str> {
-        allCases.map{"\($0)"}.set
-    }
-    static var numCases: Int {
-        allCases.count
-    }
-}
-
-public extension CaseIterable where Self: Hashable  {
-    static var allForms: Set<Self> {
-        allCases.set
-    }
-}
-
-
-//MARK: -
-
-//TODO: consider consider isolating StrRawValueInitableP and HasStrRawValueP into RawStrEnumP
+//TODO: consider isolating StrRawValueInitableP and HasStrRawValueP into RawStrEnumP
 
 /// for enums which have type String or don't
 public protocol StrEnumP: StrRawValueInitableP, HasStrRawValueP, HasStaticStringsP {}
@@ -73,7 +38,7 @@ public typealias HasAllStrFormsT = StrEnumP & HasAllFormsT
 //public protocol HasAllStrFormsT: StrEnumP, HasAllFormsT {}
 //public extension HasAllStrFormsT {
 
-/// for enums which are not of type String
+/// for enums which are not of type String but still provide var str
 public extension HasAllFormsT where Self: StrRawValueInitableP & HasStrP {
     
     /// uses first match from allForms

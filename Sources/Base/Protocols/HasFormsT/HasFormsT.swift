@@ -22,5 +22,9 @@ public protocol HasAllFormsT: Hashable {
     
     static var allForms: Set<Self> {get}
 }
-
+public extension HasAllFormsT {
+    static var numForms: Int {
+        allForms.count
+    }
+}
 

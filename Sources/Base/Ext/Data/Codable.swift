@@ -1,8 +1,17 @@
 
 
 
-public typealias JSON = [Str : Any]
+public protocol CodableImpl: Codable {}
+public extension CodableImpl {
+    init(from decoder: Decoder) throws {
+        fatalError()
+    }
+    func encode(to encoder: Encoder) throws {
+        fatalError()
+    }
+}
 
+//MARK: -
 
 
 public extension Data {
@@ -40,6 +49,8 @@ public extension Encodable {
     }
 }
 
+public typealias JSON = [Str : Any]
+
 
 public extension Data {
     
@@ -57,6 +68,8 @@ public extension Data {
         return json
     }
 }
+
+//MARK: -
 
 
 public extension Encodable {

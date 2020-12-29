@@ -1,6 +1,10 @@
 
 
-public protocol CanBeNegativeP {
+public protocol NegativeP {
+    var negative: Bool {get}
+}
+
+public protocol CanBeNegativeP: NegativeP {
     // consider renaming to mustBeNegative
 
     /// negative cond, A must be NOT B

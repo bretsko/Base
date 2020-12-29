@@ -2,6 +2,7 @@
 
 import Quick
 import Nimble
+import XCTest
 import Base
 
 

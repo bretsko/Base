@@ -18,7 +18,7 @@ public protocol HasMutIDP: HasIDP {
     var idd: ID {get set}
 }
 
-
+/// Can only be used as convenience (for rapid dev), unfortunately, compiler gives error when importing class with such conformance from other lib
 public protocol IdHashableT: Hashable, HasIDP {}
 public extension IdHashableT {
     func hash(into hasher: inout Hasher) {
@@ -40,6 +40,7 @@ public extension HasIDP {
     }
 }
 
+/// Can only be used as convenience (for rapid dev), unfortunately, compiler gives error when importing class with such conformance from other lib
 public extension HasIDP where Self: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(idd)
@@ -52,4 +53,10 @@ public extension HasIDP where Self: Hashable {
 //    }
 //}
 
+
+//MARK: -
+
+
+public protocol ObjP: AnyObject, HasIDP {}
+public protocol ObjT: ObjP, IdHashableT {}
 

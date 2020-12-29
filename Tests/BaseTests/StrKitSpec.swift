@@ -2,6 +2,7 @@
 
 import Quick
 import Nimble
+import XCTest
 import Base
 
 
@@ -15,14 +16,18 @@ class StrKitSpec: QuickSpec {
                 
                 // based on https://writingexplained.org/grammar-dictionary/syllable
                 
-                expect("man".numSyllables).to(equal(1))
-                expect("cry".numSyllables).to(equal(1))
-                expect("long".numSyllables).to(equal(1))
-                expect("shame".numSyllables).to(equal(1))
-                expect("brain".numSyllables).to(equal(1))
-                expect("tree".numSyllables).to(equal(1))
-                expect("lane".numSyllables).to(equal(1))
-                expect("tile".numSyllables).to(equal(1))
+                do {
+                    try expect("man".numSyllables).to(equal(1))
+                    try expect("cry".numSyllables).to(equal(1))
+                    try expect("long".numSyllables).to(equal(1))
+                    try expect("shame".numSyllables).to(equal(1))
+                    try expect("brain".numSyllables).to(equal(1))
+                    try expect("tree".numSyllables).to(equal(1))
+                    try expect("lane".numSyllables).to(equal(1))
+                    try expect("tile".numSyllables).to(equal(1))
+                } catch {
+                    XCTFail()
+                }
                 //                clock
                 //                truck
                 //                ask
@@ -39,12 +44,14 @@ class StrKitSpec: QuickSpec {
                 //                chew
                 //                brew
                 
-                
-                expect("baker".numSyllables).to(equal(2))
-                expect("growing".numSyllables).to(equal(2))
-                expect("silent".numSyllables).to(equal(2))
-                
-                expect("terrible".numSyllables).to(equal(3))
+                do {
+                    try expect("baker".numSyllables).to(equal(2))
+                    try expect("growing".numSyllables).to(equal(2))
+                    try expect("silent".numSyllables).to(equal(2))
+                    try expect("terrible".numSyllables).to(equal(3))
+                } catch {
+                    XCTFail()
+                }
             }
             
             //            it("can ") {

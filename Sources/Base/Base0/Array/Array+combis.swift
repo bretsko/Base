@@ -2,6 +2,8 @@
 
 
 @_exported import Foundation
+@_exported import Collections
+import Algorithms
 
 
 
@@ -32,7 +34,7 @@ public extension Collection {
 ///     }
 /// }
 public func doubleForLoop<T1: Sequence, T2: Collection>(
-    _ s1: T1, _ s2: T2) -> Product2<T1, T2> {
+    _ s1: T1, _ s2: T2) -> Product2Sequence<T1, T2> {
     product(s1,s2)
 }
 

@@ -1,5 +1,4 @@
 
-@_exported import Foundation
 
 /// adds certain convs if you impl count
 public protocol ListP: HasCountP, CanBeEmptyP {}

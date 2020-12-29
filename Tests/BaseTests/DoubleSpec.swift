@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+import XCTest
 import Base
 
 
@@ -17,17 +18,25 @@ class DoubleSpec: QuickSpec {
                                         max: 10,
                                         step: 0.1)
                 
-                expect(values.len).to(equal(100))
-                expect(values[0]).to(equal(0.1))
-                expect(values[99]).to(equal(10))
+                do {
+                    try expect(values.len).to(equal(100))
+                    try expect(values[0]).to(equal(0.1))
+                    try expect(values[99]).to(equal(10))
+                } catch {
+                    XCTFail()
+                }
             }
             
             it("can gen all forms") {
                 
                 let values = Double.allForms
-                expect(values.len).to(equal(10000000))
-                expect(values.contains([5.7, 10000.2])).to(beTrue())
-                //expect(values[99]).to(equal(1000000))
+                do {
+                    try expect(values.len).to(equal(10000000))
+                    try expect(values.contains([5.7, 10000.2])).to(beTrue())
+                    //try expect(values[99]).to(equal(1000000))
+                } catch {
+                    XCTFail()
+                }
             }
         }
     }
