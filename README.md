@@ -11,4 +11,4 @@
 [SPMBadge]: https://img.shields.io/badge/SPM-compatible-brightgreen.svg
 [SPMLink]: https://github.com/apple/swift-package-manager
 
-Must-have extensions of Foundation
+Must-have extensions of Foundation. See details in wiki. 
