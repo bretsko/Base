@@ -1,4 +1,4 @@
-// swift-tools-version:5.5.0
+// swift-tools-version:5.6
 
 import PackageDescription
 
@@ -6,7 +6,7 @@ let package = Package(
     name: "Base",
     
      platforms: [
-        .macOS(.v12), .iOS(.v14) 
+        .macOS(.v12), .iOS(.v15) 
     ],
     products: [
         .library(
@@ -21,10 +21,10 @@ let package = Package(
             .upToNextMajor(from: "1.0.0") // or `.upToNextMinor
             ),
         
-        // .package(url: "../../Quick/Quick", .exact("1.0.0")),
-        // .package(url: "../../Quick/Nimble", .exact("1.0.0")),
-        .package(url: "https://github.com/bretsko/Quick", .exact("1.0.0")),
-        .package(url: "https://github.com/bretsko/Nimble", .exact("1.0.0")),
+        // .package(url: "../../Quick/Quick", from: "1.0.0"),
+        // .package(url: "../../Quick/Nimble", from: "1.0.0"),
+        .package(url: "https://github.com/bretsko/Quick", from:"1.0.0"),
+        .package(url: "https://github.com/bretsko/Nimble", from:"1.0.0"),
 
         // QuickObjCRuntime build fails on ios and mac
         // .package(url: "https://github.com/Quick/Quick", from: "3.0.0"),
