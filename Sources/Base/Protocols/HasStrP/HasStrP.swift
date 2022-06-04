@@ -73,8 +73,8 @@ public extension Array where Element: HasStrP {
     }
     
     /// ["a", "b"] -> ["a b"]
-    func makeStr(joinedWith: Str = " ") -> Str {
-        strs.joined()
+    func makeStr(joinedWith separator: Str = " ") -> Str {
+        strs.joined(separator: separator)
     }
     
     /// filter {$0.str == str}
