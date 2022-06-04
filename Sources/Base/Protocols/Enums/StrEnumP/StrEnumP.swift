@@ -63,6 +63,13 @@ public extension HasStrAndDescrP {
     }
 }
 
+public protocol HasStrArrayAndDescrP: HasStrArrayP, HasDescrP {}
+public extension HasStrArrayAndDescrP {
+    var descr: Str {
+        Str(describing: self) + ": " + strings.joinedWords
+    }
+}
+
 public protocol HasStringsAndDescrP: HasStrSetP, HasDescrP {}
 public extension HasStringsAndDescrP {
     var descr: Str {

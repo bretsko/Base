@@ -45,11 +45,11 @@ public extension HasMutIndexSetP {
 
 public protocol IndexSetHashableT: HasIdxSetP, Hashable {}
 
-public extension IndexSetHashableT {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(idxSet)
-    }
-}
+//public extension IndexSetHashableT {
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(idxSet)
+//    }
+//}
 
 
 

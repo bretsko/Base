@@ -20,11 +20,11 @@ public protocol HasMutIDP: HasIDP {
 
 /// Can only be used as convenience (for rapid dev), unfortunately, compiler gives error when importing class with such conformance from other lib
 public protocol IdHashableT: Hashable, HasIDP {}
-public extension IdHashableT {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(idd)
-    }
-}
+//public extension IdHashableT {
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(idd)
+//    }
+//}
 
 
 //TODO:
@@ -41,11 +41,11 @@ public extension HasIDP {
 }
 
 /// Can only be used as convenience (for rapid dev), unfortunately, compiler gives error when importing class with such conformance from other lib
-public extension HasIDP where Self: Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(idd)
-    }
-}
+//public extension HasIDP where Self: Hashable {
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(idd)
+//    }
+//}
 
 //extension ID: HasIDP {
 //    public var idd: ID {
