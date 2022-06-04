@@ -70,8 +70,8 @@ public extension HasStrArrayAndDescrP {
     }
 }
 
-public protocol HasStringsAndDescrP: HasStrSetP, HasDescrP {}
-public extension HasStringsAndDescrP {
+public protocol HasStrSetAndDescrP: HasStrSetP, HasDescrP {}
+public extension HasStrSetAndDescrP {
     var descr: Str {
         Str(describing: self) + ": " + strs.array.joinedWords // set !
     }

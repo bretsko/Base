@@ -40,5 +40,5 @@ public extension InitsWithStrs_P {
 }
 
 /// can init with strings and be represented with them
-public protocol StrsConvertibleP: InitsWithStrs_P, HasStringsAndDescrP {} //HasStrSetP
+public protocol StrsConvertibleP: InitsWithStrs_P, HasStrSetAndDescrP {} //HasStrSetP
 
