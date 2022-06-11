@@ -4,7 +4,7 @@
 public extension Optional where Wrapped == Str {
     
     var isEmpty: Bool {
-        return self?.isEmpty ?? true
+         self?.isEmpty ?? true
     }
 }
 
@@ -12,7 +12,7 @@ public extension Optional where Wrapped == Bool {
     
     /// == true
     var iss: Bool {
-        return self == true
+         self == true
     }
 }
 

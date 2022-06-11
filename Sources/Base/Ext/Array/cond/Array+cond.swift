@@ -12,7 +12,7 @@ public extension Array {
         contains(where: cond)
     }
     func none(satisfy cond: BoolCond) -> Bool {
-        return !has(cond)
+        !has(cond)
     }
     /// some -> maybe all!
     func some(satisfy cond: BoolCond) -> Bool {
@@ -21,7 +21,7 @@ public extension Array {
     
     /// some -> maybe all!
     func some(notSatisfy cond: BoolCond) -> Bool {
-        return !some(satisfy: cond)
+        !some(satisfy: cond)
     }
     
     
@@ -48,7 +48,7 @@ public extension Array {
         }
     }
     func none(satisfy conds: [BoolCond]) -> Bool {
-        return !some(satisfy: conds)
+        !some(satisfy: conds)
     }
     /// some -> maybe all!
     /// maybe all!
@@ -99,26 +99,26 @@ public extension Array {
     
     
     func indexes(satisfying cond: BoolCond) -> [Int]? {
-        return enumerated().map { i, a in
+        enumerated().map { i, a in
             cond(a) ? i : nil
         }.compactMap{$0}.sth
     }
     
     func indexes(satisfyingAll conds: [BoolCond]) -> [Int]? {
-        return enumerated().map { i, a in
+        enumerated().map { i, a in
             conds.allSatisfy{ $0(a) } ? i : nil
         }.compactMap{$0}.sth
     }
     
     /// some -> maybe all!
     func indexes(satisfyingSome conds: [BoolCond]) -> [Int]? {
-        return enumerated().map { i, a in
+        enumerated().map { i, a in
             conds.has{ $0(a) } ? i : nil
         }.compactMap{$0}.sth
     }
     
     func indexes(satisfyingNone conds: [BoolCond]) -> [Int]? {
-        return enumerated().map { i, a in
+        enumerated().map { i, a in
             conds.allSatisfy{ $0(a) == false} ? i : nil
         }.compactMap{$0}.sth
     }
@@ -127,19 +127,19 @@ public extension Array {
     //MARK: count
     
     func count(_ cond: BoolCond) -> Int {
-        return filter{cond($0)}.len
+        filter{cond($0)}.len
     }
     
     func count(satisfyingAll conds: [BoolCond]) -> Int {
-        return indexes(satisfyingAll: conds)?.len ?? 0
+        indexes(satisfyingAll: conds)?.len ?? 0
     }
     /// some -> maybe all!
     func count(satisfyingSome conds: [BoolCond]) -> Int {
-        return indexes(satisfyingSome: conds)?.len ?? 0
+        indexes(satisfyingSome: conds)?.len ?? 0
     }
     
     func count(satisfyingNone conds: [BoolCond]) -> Int {
-        return indexes(satisfyingNone: conds)?.len ?? 0
+        indexes(satisfyingNone: conds)?.len ?? 0
     }
     
     //MARK: - duplicates
@@ -230,7 +230,7 @@ public extension Array {
 public extension Set {
     
     //MARK: - duplicates
-
+    
     /// peopleArray = peopleArray.filterDuplicate{ ($0.name, $0.age, $0.sex) }
     func filterDuplicates<T>(with keyValue: (E) -> T ) -> Set {
         var uniqueKeys = Set<Str>()

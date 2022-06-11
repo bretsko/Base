@@ -812,18 +812,18 @@ public extension ICSet {
     
     @discardableResult
     mutating func removeSpaces() -> Bool {
-        return removeAll(of: " ")
+         removeAll(of: " ")
     }
     var removingSpaces: ICSet? {
-        return removingAll(of: " ")
+         removingAll(of: " ")
     }
     
     @discardableResult
     mutating func removeNewLines() -> Bool {
-        return removeAll(of: "\n")
+         removeAll(of: "\n")
     }
     var removingNewLines: ICSet? {
-        return removingAll(of: "\n")
+         removingAll(of: "\n")
     }
     
     /// returns false if any fails, but false doesnt mean nothing changed!!

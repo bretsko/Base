@@ -30,7 +30,7 @@ public extension Array where Element: Equatable {
     }
     func containsInPrefix(prefixLentgh: Int = Int.max,
                           no items: Array) -> Bool {
-        return !contains(some:items)
+         !contains(some:items)
     }
     
     

@@ -51,7 +51,7 @@ public extension SignedInteger {
     /// - Parameter n: integer value to find gcd with.
     /// - Returns: greatest common divisor of self and n.
     func gcd(of n: Self) -> Self {
-        return n == 0 ? self : n.gcd(of: self % n)
+         n == 0 ? self : n.gcd(of: self % n)
     }
     
     ///  Least common multiple of integer and n.

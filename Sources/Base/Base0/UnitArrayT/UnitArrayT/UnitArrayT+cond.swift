@@ -43,7 +43,7 @@ public extension UnitArrayT {
         }
     }
     func none(satisfy conds: [BoolCond]) -> Bool {
-        return !units.some(satisfy: conds)
+         !units.some(satisfy: conds)
     }
     /// some -> maybe all!
     /// maybe all!
@@ -76,7 +76,7 @@ public extension UnitArrayT {
         }
     }
     func none(satisfy conds: BoolCond...) -> Bool {
-        return !units.some(satisfy: conds)
+         !units.some(satisfy: conds)
     }
     
     /// some -> maybe all!

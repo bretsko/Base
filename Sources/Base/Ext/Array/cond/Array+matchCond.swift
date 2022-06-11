@@ -28,7 +28,7 @@ public extension Array {
     /// true if - cond cannot match any unit in this array to any unit in the other array
     func noneSatisfy(_ other: Array,
                      _ matchCond: MatchCond) -> Bool {
-        return !someSatisfy(other,matchCond)
+         !someSatisfy(other,matchCond)
     }
     
     
@@ -58,7 +58,7 @@ public extension Array {
     /// true if - cannot match with all conds - any unit in this array to any unit in the other array
     func noneSatisfy(_ other: Array,
                      _ matchConds: [MatchCond]) -> Bool {
-        return !someSatisfy(other,matchConds)
+         !someSatisfy(other,matchConds)
     }
     
     
@@ -164,7 +164,7 @@ public extension Array {
         //        }
     }
     func containsDuplicates(satisfying conds: [MatchCond]) -> Bool {
-        return removingDuplicates(satisfying:conds) != nil
+         removingDuplicates(satisfying:conds) != nil
     }
 }
 

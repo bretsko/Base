@@ -213,7 +213,7 @@ public extension Collection where Index == Int {
     /// - Returns: Sorted array based on keyPath.
     func sorted<T: Comparable>(by path: KeyPath<E, T>,
                                ascending: Bool = true) -> [E] {
-        return sorted(by: { (lhs, rhs) -> Bool in
+         sorted(by: { (lhs, rhs) -> Bool in
             if ascending {
                 return lhs[keyPath: path] < rhs[keyPath: path]
             }
@@ -257,7 +257,7 @@ public extension Collection {
     ///        arr[safe: 10] -> nil
     /// - Parameter idx: idx of unit to access unit.
     subscript(safe idx: Index) -> Iterator.Element? {
-        return indices.contains(idx) ? self[idx] : nil
+         indices.contains(idx) ? self[idx] : nil
     }
     
     
@@ -369,10 +369,10 @@ public extension RangeReplaceableCollection {
 fileprivate extension Collection {
     
     var sth: Self? {
-        return isEmpty ? nil : self
+         isEmpty ? nil : self
     }
     var hasSth: Bool {
-        return !isEmpty
+         !isEmpty
     }
 }
 
@@ -380,17 +380,17 @@ fileprivate extension Collection where Index == Int {
     
     // reason why fileprivate is I cannot add HasCountP or CanBeEmptyP
     var len: Int {
-        return count
+         count
     }
     var has1: Bool {
-        return len == 1
+         len == 1
     }
     /// count > 1
     var hasMany: Bool {
-        return count > 1
+         count > 1
     }
     var randIdx: Int {
-        return Int.rand(count)
+         Int.rand(count)
     }
     var center: E? {
         guard hasSth else {
@@ -411,7 +411,7 @@ public extension Collection where Element == IntegerLiteralType, Index == Int {
     // http://stackoverflow.com/questions/28288148/making-my-function-calculate-average-of-array-swift
     ///  Average of all units in array.
     var average: Double {
-        return isEmpty ? 0 : reduce(0, +).d / len.d
+         isEmpty ? 0 : reduce(0, +).d / len.d
     }
 }
 

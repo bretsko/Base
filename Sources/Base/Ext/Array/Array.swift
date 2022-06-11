@@ -227,7 +227,7 @@ public extension Array {
     /// - Returns: Sorted array based on keyPath.
     func sorted<T: Comparable>(by path: KeyPath<E, T>,
                                ascending: Bool = true) -> [E] {
-        return sorted(by: { (lhs, rhs) -> Bool in
+         sorted(by: { (lhs, rhs) -> Bool in
             if ascending {
                 return lhs[keyPath: path] < rhs[keyPath: path]
             }
@@ -299,7 +299,7 @@ public extension Array {
      - returns: The array created by applying the transform to this array.
      */
     func mapWithIdx<T>(_ f: (Int, E) -> T) -> [T] {
-        return zip(startIndex ..< endIndex, self).map(f)
+         zip(startIndex ..< endIndex, self).map(f)
     }
     
     

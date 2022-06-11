@@ -51,18 +51,18 @@ public extension ICSet {
 
 public extension Array where Element == Str {
     var icSet: Set<IChar> {
-        return Set(enumerated().map { IChar($0, $1) })
+         Set(enumerated().map { IChar($0, $1) })
     }
 }
 
 public extension Array where Element == Char {
     var icSet: Set<IChar> {
-        return Set(enumerated().map { IChar($0, $1) })
+         Set(enumerated().map { IChar($0, $1) })
     }
 }
 
 public extension Str {
     var icSet: Set<IChar> {
-        return chars.icSet
+         chars.icSet
     }
 }

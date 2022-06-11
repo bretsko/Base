@@ -158,7 +158,7 @@ fileprivate class SyllableCounter {
     }
     
     func buildRegexes(forPatterns patterns: [Str]) throws -> [NSRegularExpression] {
-        return try patterns.map { pattern -> NSRegularExpression in
+         try patterns.map { pattern -> NSRegularExpression in
             do {
                 let regex = try NSRegularExpression(pattern: pattern, options: [.caseInsensitive, .anchorsMatchLines])
                 return regex

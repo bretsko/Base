@@ -15,7 +15,7 @@ public extension Bool {
     
     /// inverse value
     var toggled: Bool {
-        return !self
+         !self
     }
     
     static var random: Bool {

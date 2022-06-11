@@ -184,7 +184,7 @@ public extension Array where Element: HasIdxP {
     }
     /// false if any is present
     func hasNoUnits(with indices: [Int]) -> Bool {
-        return !hasSomeUnits(with:indices)
+         !hasSomeUnits(with:indices)
     }
     
     

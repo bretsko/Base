@@ -32,12 +32,12 @@ public extension Array where Element: Hashable {
     /// returns true if any were added
     @discardableResult
     mutating func merge(with units: Array) -> Bool {
-        return addUnique(units)
+         addUnique(units)
     }
     /// union, merge, insert
     /// returns nil if none were added
     func merging(with units: Array) -> Array? {
-        return addingUnique(units)
+         addingUnique(units)
     }
     
     
@@ -45,12 +45,12 @@ public extension Array where Element: Hashable {
     /// returns true if any were added
     @discardableResult
     mutating func insert(with units: Array) -> Bool {
-        return addUnique(units)
+         addUnique(units)
     }
     /// union, merge, insert
     /// returns nil if none were added
     func inserting(with units: Array) -> Array? {
-        return addingUnique(units)
+         addingUnique(units)
     }
     
     //MARK: removing

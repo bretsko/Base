@@ -58,13 +58,13 @@ public extension Array where Element: HasObjT {
     typealias ObjT = E.ObjT
     
     var objs: [ObjT] {
-        return map{$0.obj}
+         map{$0.obj}
     }
 }
 public extension Set where Element: HasObjT {
     typealias ObjT = E.ObjT
     
     var objs: [ObjT] {
-        return map{$0.obj}
+         map{$0.obj}
     }
 }
