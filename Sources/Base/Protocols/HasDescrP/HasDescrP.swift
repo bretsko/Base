@@ -17,15 +17,8 @@ public extension HasDescrP {
 
 //MARK: -
 
-// CustomStringConvertible
-extension Array: HasDescr {
-    public var descr: Str {
-        description
-    }
-}
-
 public extension Array where Element: HasDescr {
-    
+    /// 1D array with indices
     var descr: Str {
         var r = ""
         enumerated().forEach { i,unit in
@@ -37,7 +30,8 @@ public extension Array where Element: HasDescr {
 
 public extension Array where Element: CustomStringConvertible {
     
-    var descr: Str {
+    /// 1D array with indices
+    var description: Str {
         var r = ""
         enumerated().forEach { i,unit in
             r += "\n\(i) \(unit)"
@@ -48,7 +42,8 @@ public extension Array where Element: CustomStringConvertible {
 
 public extension Array where Element: RandomAccessCollection, Element.Element: HasDescr {
     
-    var descr: Str {
+    /// 2D array with indices
+    var descr2: Str {
         var r = ""
         enumerated().forEach { i1, row in
             row.enumerated().forEach { i2, unit in
@@ -58,4 +53,15 @@ public extension Array where Element: RandomAccessCollection, Element.Element: H
         return r
     }
 }
+
+extension Set: HasDescr {
+    public var descr: Str {
+        description
+    }
+}
+//extension Array: HasDescr {
+//    public var descr: Str {
+//        description
+//    }
+//}
 

@@ -1,12 +1,6 @@
 
 
 
-extension Set: HasDescrP {
-    public var descr: Str {
-        array.descr
-    }
-}
-
 extension Str: HasDescrP {
     public var descr: Str {
         self
