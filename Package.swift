@@ -1,4 +1,4 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 5.7
 
 import PackageDescription
 
@@ -16,10 +16,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/apple/swift-algorithms", from: "1.0.0"),
         
-            .package(
-                url: "https://github.com/apple/swift-collections.git",
-                    .upToNextMajor(from: "1.0.0")
-            ),
+        .package(
+            url: "https://github.com/apple/swift-collections.git", from: "1.0.0"),
         
         // .package(url: "../../Quick/Quick", from: "1.0.0"),
         // .package(url: "../../Quick/Nimble", from: "1.0.0"),
@@ -31,10 +29,14 @@ let package = Package(
     ],
     targets: [
         
-        .target(name: "Base", dependencies: [
-            .product(name: "Algorithms", package: "swift-algorithms"),
-            .product(name: "Collections", package: "swift-collections")
-        ]),
+        .target(
+            name: "Base",
+            dependencies: [
+                .product(name: "Algorithms", package: "swift-algorithms"),
+                .product(name: "Collections", package: "swift-collections")
+            ],
+            swiftSettings: [.unsafeFlags(["-suppress-warnings"])]
+        ),
         
         // .target(
         //     name: "VariantKit", // not used currently

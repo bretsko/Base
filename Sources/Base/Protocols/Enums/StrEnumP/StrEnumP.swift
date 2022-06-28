@@ -24,6 +24,8 @@ public extension StrEnumP where Self: CaseIterableT  {
 
 /// for enums which have type String
 public protocol StrEnumT: StrEnumP, HasDescr, CaseIterable, Comparable, HasAllFormsT {}
+//TODO: add CodingKeyRepresentable when needed OR Package starts supporting .macOS(.v12) or .macOS(.v13) OR add manually if needed
+
 public extension StrEnumT {
     /// "Self.rawValue"
     var descr: Str {

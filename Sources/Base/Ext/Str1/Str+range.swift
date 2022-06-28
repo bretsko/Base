@@ -1,7 +1,7 @@
 
 
 
-public extension StrP where Index == StrIdx {
+public extension StrP {
     
     func nsRange(from range: Range<Index>) -> NSRange {
         NSRange(range, in: self)
