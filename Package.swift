@@ -34,8 +34,10 @@ let package = Package(
             dependencies: [
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Collections", package: "swift-collections")
-            ],
-            swiftSettings: [.unsafeFlags(["-suppress-warnings"])]
+            ]
+            // currently Packages with unsafe flags cannot be depended on
+            //https://stackoverflow.com/questions/66462498/how-to-override-the-unsafeflags-behavior-of-swift-package-manager
+            //swiftSettings: [.unsafeFlags(["-suppress-warnings"])]
         ),
         
         // .target(
