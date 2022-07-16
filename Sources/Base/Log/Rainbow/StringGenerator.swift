@@ -14,13 +14,13 @@ struct ConsoleStringGenerator: StringGenerator {
                   styles: [L.Style]? = nil,
                   _ text: Str) -> Str {
         var codes: [UInt8] = []
-        if let color = stringColor {
-            codes.append(color.rawValue)
+        if let stringColor {
+            codes.append(stringColor.rawValue)
         }
-        if let backgroundColor = backgroundColor {
+        if let backgroundColor {
             codes.append(backgroundColor.rawValue)
         }
-        if let styles = styles {
+        if let styles {
             codes += styles.map{$0.rawValue}
         }
         

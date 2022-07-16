@@ -11,8 +11,8 @@ public func crashIfFalse(_ condSatisfied: Bool,
     guard !condSatisfied else {
         return
     }
-    if let a = message {
-        fatalError(a)
+    if let message {
+        fatalError(message)
     } else {
         fatalError()
     }
@@ -130,8 +130,8 @@ public func crashIfAnyNotExpected(_ conds: [() -> Bool],
     //    guard conditions.has{$0() == expected} else {
     //        return
     //    }
-    //    if let a = message {
-    //        fatalError(a)
+    //    if let message {
+    //        fatalError(message)
     //    } else {
     //        fatalError()
     //    }

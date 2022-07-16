@@ -28,7 +28,7 @@ public class ForgivingSearchFilter<T> {
 public extension ForgivingSearchFilter {
     
     func filter(_ items: [T]) -> [T] {
-        if let pattern = pattern {
+        if let pattern {
             return items.filter(by: property,
                                 matching: pattern)
         }

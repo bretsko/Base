@@ -62,7 +62,7 @@ public extension Array {
         //        guard conditions.has{$0() == expected} else {
         //            return
         //        }
-        //        if let a = message {
+        //        if let message {
         //            fatalError(a)
         //        } else {
         //            fatalError()

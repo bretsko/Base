@@ -127,7 +127,7 @@ public typealias IdxMutHashableT = IdxHashableT & HasMutIdxP
 //    mutating func insert(_ unit: E,
 //                         idx: Int? = nil) -> Bool {
 //        let i: Int
-//        if let idx = idx {
+//        if let idx {
 //            crashIfNegative(idx)
 //            i = idx
 //        } else {

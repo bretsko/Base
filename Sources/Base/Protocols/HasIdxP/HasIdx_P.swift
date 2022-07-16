@@ -18,8 +18,8 @@ public extension HasIdx_P {
     
     /// if idx is nil, adds 1 and returns result
     func nextIdx() -> Int? {
-        if let i = idx {
-            return i + 1
+        if let idx {
+            return idx + 1
         }
         return nil
     }
@@ -27,8 +27,8 @@ public extension HasIdx_P {
     /// if idx is nil, subtracts 1 and returns result
     /// if 0 always returns 0
     func prevIdx() -> Int? {
-        if let i = idx {
-            return i == 0 ? 0 : i - 1
+        if let idx {
+            return idx == 0 ? 0 : idx - 1
         }
         return nil
     }

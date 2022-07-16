@@ -80,7 +80,7 @@ public extension Regex {
     func numberOfMatches(_ string: Str,
                          inRange: CountableRange<Int>? = nil,
                          options: NSRegex.MatchingOptions = []) -> Int {
-        if let matcher = matcher {
+        if let matcher {
             let inputRange = rangeToNSRange(in: string, range: inRange)
             return matcher.numberOfMatches(in: string, options: options, range: inputRange)
         } else {
@@ -103,7 +103,7 @@ public extension Regex {
         var matches: [[Str]] = []
         matcher?.enumerateMatches(in: string, options: options, range: inputRange) {
             (match, flags, stop) -> Void in
-            if let match = match {
+            if let match {
                 let group = self.group(from: string, match: match)
                 matches.append(group)
             }
@@ -197,7 +197,7 @@ public extension Regex {
                           action: (_ match: [Str]) -> Void) {
         let inputRange = rangeToNSRange(in: string, range: inRange)
         matcher?.enumerateMatches(in: string, options: options, range: inputRange, using: { (result, _, _) -> Void in
-            if let result = result {
+            if let result {
                 let group = self.group(from: string, match: result)
                 action(group)
             }
@@ -242,7 +242,7 @@ private extension Regex {
     
     func rangeToNSRange(in string: Str,
                         range: CountableRange<Int>?) -> NSRange {
-        if let range = range {
+        if let range {
             return NSMakeRange(range.startIndex,
                                range.endIndex - range.startIndex)
         }

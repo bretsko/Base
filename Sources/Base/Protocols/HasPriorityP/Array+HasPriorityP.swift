@@ -33,20 +33,20 @@ public extension Array where Element: HasPriorityP {
     }
     
     var withMinPriority: Array? {
-        if let a = minPriority {
-            return filterSth{$0.priority == a}
+        if let minPriority {
+            return filterSth{$0.priority == minPriority}
         }
         return nil
     }
     var withMaxPriority: Array?  {
-        if let a = maxPriority {
-            return filterSth{$0.priority == a}
+        if let maxPriority {
+            return filterSth{$0.priority == maxPriority}
         }
         return nil
     }
     var withAvgPriority: Array? {
-        if let a = avgPriority {
-            return filterSth{$0.priority == a}
+        if let avgPriority {
+            return filterSth{$0.priority == avgPriority}
         }
         return nil
     }
