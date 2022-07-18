@@ -6,8 +6,7 @@ let package = Package(
     name: "Base",
     
     platforms: [
-        .macOS(.v12), .iOS(.v15)
-        
+        .macOS(.v13), .iOS(.v15)
     ],
     products: [
         .library(
@@ -41,7 +40,19 @@ let package = Package(
             //https://stackoverflow.com/questions/66462498/how-to-override-the-unsafeflags-behavior-of-swift-package-manager
             //swiftSettings: [.unsafeFlags(["-suppress-warnings"])]
         ),
-        
+        .target(
+            name: "Xcore",
+            dependencies: ["Base"]),
+
+        .target(
+            name: "UIKitExt",
+            dependencies: ["Xcore"]),
+
+        .target(
+            name: "SwiftUIKitExt",
+            dependencies: ["Xcore"]),
+
+
         // .target(
         //     name: "VariantKit", // not used currently
         //     dependencies: ["Base"]),

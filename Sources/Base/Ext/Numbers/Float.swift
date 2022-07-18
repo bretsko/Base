@@ -132,38 +132,6 @@ precedencegroup PowerPrecedence { higherThan: MultiplicationPrecedence }
 infix operator ** : PowerPrecedence
 
 
-//MARK: Float64
-
-public extension Float64 {
-    
-    func secondsToHoursMinutesSeconds() -> (Float64, Float64, Float64, Int) {
-        let ms = Int((truncatingRemainder(dividingBy: 1)) * 100)
-        let seconds = truncatingRemainder(dividingBy: 60)
-        let minutes = (self / 60).truncatingRemainder(dividingBy: 60)
-        let hours = self / 3600
-        
-        return (hours, minutes, seconds, ms)
-    }
-    
-    func toFormattedTimeString() -> Str {
-        let time = secondsToHoursMinutesSeconds()
-        
-        if time.0.l > 0 {
-            return Str(format: "%02d:%02d:%02d",
-                       time.0.l,
-                       time.1.l,
-                       time.2.l)
-            
-        } else if time.1.l > 0 {
-            return Str(format: "%02d:%02d",
-                       time.1.l,
-                       time.2.l)
-        }
-        return Str(format: "%02d.%02d", time.2.l, time.3)
-    }
-}
-
-
 //MARK: FloatingPoint
 
 public extension FloatingPoint {

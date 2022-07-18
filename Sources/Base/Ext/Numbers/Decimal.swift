@@ -25,7 +25,7 @@ public extension Decimal {
     //MARK: -
     
     var nsDecimal: NSDecimalNumber {
-        NSDecimalNumber(decimal: self)
+        .init(decimal: self)
     }
     
     var double: Double {

@@ -272,60 +272,6 @@
 //        return Swift.abs(self)
 //    }
 //
-//    public func formatUsingAbbrevation() -> Str {
-//        let num = d.abs
-//        let sign = (self < 0) ? "-" : ""
-//
-//        let numFormatter = NumberFormatter()
-//        numFormatter.allowsFloats = true
-//        numFormatter.minimumIntegerDigits = 1
-//        numFormatter.minimumFractionDigits = 0
-//        numFormatter.maximumFractionDigits = 1
-//
-//        switch num {
-//        case 1_000_000_000...:
-//            var formatted = num / 1_000_000
-//            if formatted - formatted.l.d == 0 {
-//                return "\(sign)\(formatted.l)B"
-//            } else {
-//                let str = numFormatter.string(from: NSNumber(value: num / 1000))!
-//                return "\(sign)\(str)B"
-//            }
-//
-//        case 1_000_000...:
-//            var formatted = num / 1_000_000
-//            if formatted - formatted.l.d == 0 {
-//                return "\(sign)\(formatted.l)U"
-//            } else {
-//                let str = numFormatter.string(from: NSNumber(value: num / 1000))!
-//                return "\(sign)\(str)U"
-//            }
-//
-//        case 1000...:
-//            var formatted = num / 1000
-//            if formatted - formatted.l.d == 0 {
-//                return "\(sign)\(formatted.l)K"
-//            } else {
-//                let str = numFormatter.string(from: NSNumber(value: num / 1000))!
-//                return "\(sign)\(str)K"
-//            }
-//
-//        case 0...:
-//            return "\(self)"
-//
-//        default:
-//            return "\(sign)\(self)"
-//        }
-//    }
-//
-//    // Str with number and current locale currency.
-//    public var asLocaleCurrency: Str {
-//        let formatter = NumberFormatter()
-//        formatter.numberStyle = .currency
-//        formatter.locale = Locale.current
-//        return formatter.string(from: self as NSNumber)!
-//    }
-//
 //    // Radian value of degree input.
 //    public var degreesToRadians: Double {
 //        return Double.pi * Double(self) / 180.0
