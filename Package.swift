@@ -4,7 +4,6 @@ import PackageDescription
 
 let package = Package(
     name: "Base",
-    
     platforms: [
         .macOS(.v13), .iOS(.v15)
     ],
