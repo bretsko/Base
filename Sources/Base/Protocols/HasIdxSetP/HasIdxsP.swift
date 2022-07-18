@@ -11,31 +11,31 @@ public extension HasIdxsP {
     
     // RangeP
     var from: Int {
-         indexes.min()!
+        indexes.min()!
     }
     // RangeP
     var to: Int {
-         indexes.max()!
+        indexes.max()!
     }
-
+    
     
     var has1: Bool {
-         indexes.len == 1
+        indexes.len == 1
     }
     /// if has only one unit - returns index
     var index: Int? {
-         has1 ? indexes.first : nil
+        has1 ? indexes.first : nil
     }
     
     
     /// indexes contain given idx
     func contains(_ idx: Int) -> Bool {
-         indexes.contains(idx)
+        indexes.contains(idx)
     }
     
     /// indexes contain given idx
     func contains(_ idxs: [Int]) -> Bool {
-         indexes.contains(idxs)
+        indexes.contains(idxs)
     }
     
     //MARK: get range

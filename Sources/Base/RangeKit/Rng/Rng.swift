@@ -14,7 +14,7 @@ public enum Rng: RngT, HasMutIndexSetP, HasDescrP {
     
     case rng(from: Int, to: Int)
     
-    case idxSet(Set<Int>)
+    case idxSet(IndexSet)
 }
 
 public extension Rng {
@@ -26,14 +26,14 @@ public extension Rng {
         crashIf(from > to || from < 0 || to < 0)
         self = .rng(from: from, to: to)
     }
-    init(_ idxSet: Set<Int>) {
+    init(_ idxSet: IndexSet) {
         crashIf(idxSet.isEmpty)
         self = .idxSet(idxSet)
     }
     
     //TODO: if contiguous - make rng?
     init(_ indexes: [Int]) {
-        self.init(Set(indexes))
+        self.init(.init(indexes))
     }
     init(index: Int) {
         self.init([index])
@@ -77,7 +77,7 @@ public extension Rng {
     }
     /// Swift CountableRange (Range)
     var range: CountableRange<Int> {
-        CountableRange<Int>(uncheckedBounds: (lower: from, upper: to))
+        .init(uncheckedBounds: (lower: from, upper: to))
     }
 }
 

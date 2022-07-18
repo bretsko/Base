@@ -1,7 +1,6 @@
 
 
 //@_exported import Base
-//@_exported import RegexKit
 
 
 public extension Array where Element == Str {

@@ -1,7 +1,7 @@
 
 
 //@_exported import Base
-//@_exported import RegexKit
+
 
 public typealias StrP = StringProtocol
 

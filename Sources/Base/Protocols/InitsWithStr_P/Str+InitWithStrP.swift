@@ -1,7 +1,6 @@
 
 
 //@_exported import Base
-//@_exported import RegexKit
 
 
 public extension Str  {
@@ -10,7 +9,9 @@ public extension Str  {
     
     /// splits string using given chars, trims spaces and tries to init given type
     /// For ex ["Cat, Dog"] -> [Animal]
-    func parseStrInitables<T: InitsWithStr_P>(separatedBy charSet: CharSet = CharSet([","])) -> [T]? {
+    func parseStrInitables<T: InitsWithStr_P>(
+        separatedBy charSet: CharSet = .init([","])
+    ) -> [T]? {
         trimmingSpacesAndNewlines
             .split(by: charSet)?
             .compactMap { T($0) }.sth

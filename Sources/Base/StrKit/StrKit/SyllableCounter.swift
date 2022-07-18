@@ -143,22 +143,22 @@ fileprivate class SyllableCounter {
     
     func populateAddSyllables() throws {
         try addSyllables = buildRegexes(forPatterns: [
-                                            "ia", "riet", "dien", "iu", "io", "ii",
-                                            "[aeiouy]bl$", "mbl$", "tl$", "sl$", "[aeiou]{3}",
-                                            "^mc", "ism$", "(.)(?!\\1)([aeiouy])\\2l$", "[^l]llien", "^coad.",
-                                            "^coag.", "^coal.", "^coax.", "(.)(?!\\1)[gq]ua(.)(?!\\2)[aeiou]", "dnt$",
-                                            "thm$", "ier$", "iest$", "[^aeiou][aeiouy]ing$"])
+            "ia", "riet", "dien", "iu", "io", "ii",
+            "[aeiouy]bl$", "mbl$", "tl$", "sl$", "[aeiou]{3}",
+            "^mc", "ism$", "(.)(?!\\1)([aeiouy])\\2l$", "[^l]llien", "^coad.",
+            "^coag.", "^coal.", "^coax.", "(.)(?!\\1)[gq]ua(.)(?!\\2)[aeiou]", "dnt$",
+            "thm$", "ier$", "iest$", "[^aeiou][aeiouy]ing$"])
     }
     
     func populateSubSyllables() throws {
         try subSyllables = buildRegexes(forPatterns: [
-                                            "cial", "cian", "tia", "cius", "cious",
-                                            "gui", "ion", "iou", "sia$", ".ely$",
-                                            "ves$", "geous$", "gious$", "[^aeiou]eful$", ".red$"])
+            "cial", "cian", "tia", "cius", "cious",
+            "gui", "ion", "iou", "sia$", ".ely$",
+            "ves$", "geous$", "gious$", "[^aeiou]eful$", ".red$"])
     }
     
     func buildRegexes(forPatterns patterns: [Str]) throws -> [NSRegularExpression] {
-         try patterns.map { pattern -> NSRegularExpression in
+        try patterns.map { pattern -> NSRegularExpression in
             do {
                 let regex = try NSRegularExpression(pattern: pattern, options: [.caseInsensitive, .anchorsMatchLines])
                 return regex

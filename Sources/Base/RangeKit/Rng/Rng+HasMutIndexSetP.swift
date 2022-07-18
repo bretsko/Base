@@ -6,13 +6,13 @@ public extension Rng {
     
     // HasMutIndexSetP
     /// interface for handling both indexes and idxSet
-    var idxSet: Set<Int> {
+    var idxSet: IndexSet {
         get {
             switch self {
             case .idxSet(let idxSet):
                 return idxSet
             default:
-                return Set(from...to)
+                return .init(from...to)
             }
         }
         set {

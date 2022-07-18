@@ -4,23 +4,22 @@
 
 public protocol HasIdxSetP: HasIdxsP {
     
-    var idxSet: Set<Int> {get}
+    var idxSet: IndexSet {get}
 }
 
 public extension HasIdxSetP {
     
     // HasIdxsP
     var indexes: [Int] {
-         Array(idxSet)
+        idxSet.array
     }
     
     //todo - set funcs
 }
 
 
-
 public protocol HasMutIndexSetP: HasIdxSetP { //? HasMutIdxsP
-    var idxSet: Set<Int> {get set}
+    var idxSet: IndexSet {get set}
     
     // true if inserted
     //    @discardableResult
@@ -31,10 +30,10 @@ public extension HasMutIndexSetP {
     // HasIdxsP
     var indexes: [Int] {
         get {
-             Array(idxSet)
+            Array(idxSet)
         }
         set {
-            idxSet = Set(newValue)
+            idxSet = .init(newValue)
         }
     }
     

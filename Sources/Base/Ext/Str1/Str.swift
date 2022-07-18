@@ -5,8 +5,6 @@ public typealias Char = Character
 public typealias CharSet = CharacterSet
 public typealias StrIdx = Str.Index
 
-
-
 public extension Str {
     typealias CS = CharSet
     

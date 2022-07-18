@@ -19,6 +19,7 @@ let package = Package(
         
         .package(
             url: "https://github.com/apple/swift-collections.git", from: "1.0.0"),
+        //https://github.com/JohnSundell/CollectionConcurrencyKit
         
         // .package(url: "../../Quick/Quick", from: "1.0.0"),
         // .package(url: "../../Quick/Nimble", from: "1.0.0"),
@@ -49,8 +50,8 @@ let package = Package(
             //     name: "BaseTests",
             //     dependencies: [
             //     "Base",
-            //     .product(name: "Quick", package: "Quick"),
-            //     .product(name: "NimbleLib", package: "Quick")
+            //     // .product(name: "Quick", package: "Quick"),
+            //     // .product(name: "NimbleLib", package: "Quick")
             //     ]
             //     ),
     ]

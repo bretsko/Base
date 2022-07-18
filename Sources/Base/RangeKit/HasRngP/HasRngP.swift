@@ -9,41 +9,41 @@ public protocol HasRngP: HasIdxSetP {
 public extension HasRngP {
     
     // HasIdxSetP
-    var idxSet: Set<Int> {
-         rng.idxSet
+    var idxSet: IndexSet {
+        rng.idxSet
     }
     
     var from: Int {
-         rng.from
+        rng.from
     }
     var to: Int {
-         rng.to
+        rng.to
     }
     /// from == to
     var has1Index: Bool {
-         from == to
+        from == to
     }
     
     //MARK: makeRange
     
     func range(withIdxsMoreThan idx: Int,
                includingIt: Bool = false) -> Rng? {
-         rng.range(withIdxsMoreThan: idx,
-                         includingIt: includingIt)
+        rng.range(withIdxsMoreThan: idx,
+                  includingIt: includingIt)
     }
     
     func range(withIdxsLessThan idx: Int,
                includingIt: Bool = false) -> Rng? {
-         rng.range(withIdxsLessThan: idx,
-                         includingIt: includingIt)
+        rng.range(withIdxsLessThan: idx,
+                  includingIt: includingIt)
     }
     
     func range(from idx1: Int,
                to idx2: Int,
                includingBoth: Bool = false) -> Rng? {
-         rng.range(from: idx1,
-                         to: idx2,
-                         includingBoth: includingBoth)
+        rng.range(from: idx1,
+                  to: idx2,
+                  includingBoth: includingBoth)
     }
     
     
@@ -51,18 +51,18 @@ public extension HasRngP {
     
     func isInRange(_ rng: Rng,
                    includingEnds: Bool = false) -> Bool {
-         rng.isInRange(rng,
-                             includingEnds: includingEnds)
+        rng.isInRange(rng,
+                      includingEnds: includingEnds)
     }
     
     func isOutside(_ rng: Rng) -> Bool{
-         rng.isOutside(rng)
+        rng.isOutside(rng)
     }
     
     func contains(_ rng: Rng,
                   includingEnds: Bool = false) -> Bool {
-         rng.contains(rng,
-                            includingEnds: includingEnds)
+        rng.contains(rng,
+                     includingEnds: includingEnds)
     }
 }
 
@@ -82,8 +82,6 @@ public extension RngHashableT {
 
 
 
-
-
 public protocol HasMutRngP: HasRngP, HasMutIndexSetP {
     
     var rng: Rng {get set}
@@ -93,7 +91,7 @@ public extension HasMutRngP {
     
     // HasMutIndexSetP
     /// interface for handling both indexes and idxSet
-    var idxSet: Set<Int> {
+    var idxSet: IndexSet {
         get {
             rng.idxSet
         }

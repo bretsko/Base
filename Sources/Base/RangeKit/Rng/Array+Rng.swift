@@ -4,24 +4,24 @@
 public extension Array where Element == Rng {
     
     /// exact match only!
-    func allHave(_ idxSet: Set<Int>) -> Bool {
+    func allHave(_ idxSet: IndexSet) -> Bool {
         allSatisfy{$0.idxSet == idxSet}
     }
     
     /// exact match only!
-    func noneHave(_ idxSet: Set<Int>) -> Bool {
+    func noneHave(_ idxSet: IndexSet) -> Bool {
         allSatisfy{$0.idxSet != idxSet}
     }
     
     /// some -> maybe all!
     /// exact match only!
-    func someHave(_ idxSet: Set<Int>) -> Bool {
+    func someHave(_ idxSet: IndexSet) -> Bool {
         has{$0.idxSet == idxSet}
     }
     
     /// some -> maybe all!
     /// exact match only!
-    func someDontHave(_ idxSet: Set<Int>) -> Bool {
+    func someDontHave(_ idxSet: IndexSet) -> Bool {
         has{$0.idxSet != idxSet}
     }
     
@@ -51,21 +51,24 @@ public extension Array where Element == Rng {
     func allAreInRange(from: Int, to: Int,
                        includingEnds: Bool = true) -> Bool {
         
-        allSatisfy{
+        allSatisfy {
             $0.rng.isInRange(Rng(from, to),
-                             includingEnds:includingEnds) }
+                             includingEnds:includingEnds)
+        }
     }
     
     func allAreOutsideRange(from: Int, to: Int) -> Bool {
         allSatisfy{
-            $0.rng.isOutsideRange(from:from, to:to) }
+            $0.rng.isOutsideRange(from:from, to:to)
+        }
     }
     
     func allContainRange(from: Int, to: Int,
                          includingEnds: Bool = true) -> Bool {
         
-        allSatisfy{
-            $0.rng.containsRange(from:from, to:to, includingEnds:includingEnds) }
+        allSatisfy {
+            $0.rng.containsRange(from:from, to:to, includingEnds:includingEnds)
+        }
     }
     
     //MARK: index
@@ -74,8 +77,9 @@ public extension Array where Element == Rng {
     func allHaveInside(_ idx: Int,
                        includingEnds: Bool = true) -> Bool {
         
-        allSatisfy{
-            $0.rng.hasInside(idx, includingEnds:includingEnds) }
+        allSatisfy {
+            $0.rng.hasInside(idx, includingEnds:includingEnds)
+        }
     }
     
     /// means idx is bigger than to or less than from
@@ -116,28 +120,26 @@ public extension Array where Element == Rng {
 
 
 
-
-
 //TODO: try bridge via array
 public extension Set where Element == Rng {
     
     /// exact match only!
-    func allHave(_ idxSet: Set<Int>) -> Bool {
+    func allHave(_ idxSet: IndexSet) -> Bool {
         allSatisfy{$0.idxSet == idxSet}
     }
     
     /// exact match only!
-    func noneHave(_ idxSet: Set<Int>) -> Bool {
+    func noneHave(_ idxSet: IndexSet) -> Bool {
         allSatisfy{$0.idxSet != idxSet}
     }
     
     /// exact match only!
-    func someHave(_ idxSet: Set<Int>) -> Bool {
+    func someHave(_ idxSet: IndexSet) -> Bool {
         has{$0.idxSet == idxSet}
     }
     
     /// exact match only!
-    func someDontHave(_ idxSet: Set<Int>) -> Bool {
+    func someDontHave(_ idxSet: IndexSet) -> Bool {
         has{$0.idxSet != idxSet}
     }
     
@@ -174,7 +176,8 @@ public extension Set where Element == Rng {
     
     func allAreOutsideRange(from: Int, to: Int) -> Bool {
         allSatisfy {
-            $0.rng.isOutsideRange(from:from, to:to) }
+            $0.rng.isOutsideRange(from:from, to:to)
+        }
     }
     
     func allContainRange(from: Int, to: Int,
@@ -182,7 +185,8 @@ public extension Set where Element == Rng {
         
         allSatisfy {
             $0.rng.containsRange(from:from, to:to,
-                                 includingEnds:includingEnds) }
+                                 includingEnds:includingEnds)
+        }
     }
     
     //MARK: index
@@ -190,10 +194,10 @@ public extension Set where Element == Rng {
     /// means idx is between from and to
     func allHaveInside(_ idx: Int,
                        includingEnds: Bool = true) -> Bool {
-        
         allSatisfy {
             $0.rng.hasInside(idx,
-                             includingEnds:includingEnds) }
+                             includingEnds:includingEnds)
+        }
     }
     
     /// means idx is bigger than to or less than from

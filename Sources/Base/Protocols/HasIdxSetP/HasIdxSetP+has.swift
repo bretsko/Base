@@ -1,7 +1,6 @@
 
 
 
-
 public extension HasIdxSetP {
     
     //MARK: index
@@ -20,43 +19,41 @@ public extension HasIdxSetP {
         idx < from || idx > to
     }
     
-    
     //MARK: index set
     
     /// means all given idxs are outside
-    func hasOutside(_ idxs: Set<Int>) -> Bool {
+    func hasOutside(_ idxs: IndexSet) -> Bool {
         idxSet.isDisjoint(with: idxs)
     }
     
     
     /// = hasSomeInside
     /// some -> maybe all!
-    func contains(some idxs: Set<Int>) -> Bool {
+    func contains(some idxs: IndexSet) -> Bool {
         hasSomeInside(idxs)
     }
     
     /// means all given idxs are inside
     /// some -> maybe all!
-    func hasSomeInside(_ idxs: Set<Int>) -> Bool {
+    func hasSomeInside(_ idxs: IndexSet) -> Bool {
         !idxSet.isDisjoint(with: idxs)
         //!idxSet.intersection(idxs).isEmpty
     }
     
-    
     /// = hasAllInside
-    func containsAll(_ idxs: Set<Int>) -> Bool {
+    func containsAll(_ idxs: IndexSet) -> Bool {
         hasAllInside(idxs)
     }
     
     /// means all given idxs are inside
-    func hasAllInside(_ idxs: Set<Int>) -> Bool {
+    func hasAllInside(_ idxs: IndexSet) -> Bool {
         idxSet.isSuperset(of: idxs)
         //!idxSet.intersection(idxs).isEmpty
     }
     
     
     /// means given idxs contain all indices
-    func isPartOf(_ idxs: Set<Int>) -> Bool {
+    func isPartOf(_ idxs: IndexSet) -> Bool {
         idxSet.isSubset(of: idxs)
     }
     
@@ -66,34 +63,34 @@ public extension HasIdxSetP {
     
     /// means all given idxs are outside
     func hasOutside(_ idxs: [Int]) -> Bool {
-        hasOutside(Set(idxs))
+        hasOutside(IndexSet(idxs))
     }
     
     /// = hasSomeInside
     /// some -> maybe all!
     func contains(some idxs: [Int]) -> Bool {
-        contains(some: Set(idxs))
+        contains(some: IndexSet(idxs))
     }
     
     /// means all given idxs are inside
     /// some -> maybe all!
     func hasSomeInside(_ idxs: [Int]) -> Bool {
-        hasSomeInside(Set(idxs))
+        hasSomeInside(IndexSet(idxs))
     }
     
     /// = hasAllInside
     func containsAll(_ idxs: [Int]) -> Bool {
-        containsAll(Set(idxs))
+        containsAll(IndexSet(idxs))
     }
     
     /// means all given idxs are inside
     func hasAllInside(_ idxs: [Int]) -> Bool {
-        hasAllInside(Set(idxs))
+        hasAllInside(IndexSet(idxs))
     }
     
     /// means given idxs contain all indices
     func isPartOf(_ idxs: [Int]) -> Bool {
-        isPartOf(Set(idxs))
+        isPartOf(IndexSet(idxs))
     }
 }
 

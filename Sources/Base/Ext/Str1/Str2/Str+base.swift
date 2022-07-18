@@ -1,5 +1,4 @@
 
-//@_exported import RegexKit
 
 
 public extension Str {
