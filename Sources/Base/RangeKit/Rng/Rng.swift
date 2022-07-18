@@ -33,7 +33,7 @@ public extension Rng {
     
     //TODO: if contiguous - make rng?
     init(_ indexes: [Int]) {
-        self.init(.init(indexes))
+        self.init(IndexSet(indexes))
     }
     init(index: Int) {
         self.init([index])
