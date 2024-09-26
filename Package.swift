@@ -1,11 +1,11 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 6.0
 
 import PackageDescription
 
 let package = Package(
     name: "Base",
     platforms: [
-        .macOS(.v13), .iOS(.v15)
+        .macOS(.v13)//, .iOS(.v15)
     ],
     products: [
         .library(
@@ -13,10 +13,10 @@ let package = Package(
             targets: ["Base"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-algorithms", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-algorithms", from: "1.2.0"),
         
         .package(
-            url: "https://github.com/apple/swift-collections.git", from: "1.0.0"),
+            url: "https://github.com/apple/swift-collections.git", from: "1.1.4"),
         //https://github.com/JohnSundell/CollectionConcurrencyKit
         
         // .package(url: "../../Quick/Quick", from: "1.0.0"),
@@ -42,14 +42,6 @@ let package = Package(
         .target(
             name: "Xcore",
             dependencies: ["Base"]),
-
-        .target(
-            name: "UIKitExt",
-            dependencies: ["Xcore"]),
-
-        .target(
-            name: "SwiftUIKitExt",
-            dependencies: ["Xcore"]),
 
 
         // .target(

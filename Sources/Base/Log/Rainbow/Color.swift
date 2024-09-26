@@ -1,7 +1,7 @@
 public extension L {
     
     /// Valid text colors to use in `L.Rainbow`.
-    enum Color: UInt8, ModeCode {
+    enum Color: UInt8, ModeCode, Sendable {
         case black = 30
         case red
         case green

@@ -24,13 +24,13 @@ public extension L {
      - Console: A valid console is detected connected.
      - XcodeColors: Used in Xcode with XcodeColors enabled.
      */
-     enum OutputTarget {
+    enum OutputTarget: Sendable {
         case unknown
         case console
         case xcodeColors
         
         /// Detected output target by current envrionment.
-        static var current: OutputTarget = {
+        static let current: OutputTarget = {
             // Check if Xcode Colors is installed and enabled.
             let xcodeColorsEnabled = (getEnvValue("XcodeColors") == "YES")
             if xcodeColorsEnabled {

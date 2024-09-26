@@ -5,14 +5,14 @@ public struct L {}
 public extension L {
     
     struct LogColor {
-        static var trace = Color.lightBlue
-        static var debug = Color.green
-        static var info = Color.lightMagenta
-        static var warning = Color.magenta
-        static var error = Color.lightRed
+        static let trace = Color.lightBlue
+        static let debug = Color.green
+        static let info = Color.lightMagenta
+        static let warning = Color.magenta
+        static let error = Color.lightRed
     }
     
-    enum LogLevel: Int {
+    enum LogLevel: Int, Sendable {
         case trace
         case debug
         case info
@@ -21,20 +21,20 @@ public extension L {
     }
     
     /// logger state.
-    static var enabled = true
+    static let enabled = true
     
-    static var logLevel: LogLevel = .trace
+    static let logLevel: LogLevel = .trace
     
-    static var useTerminalColors = true
+    static let useTerminalColors = true
     
     //TODO:
-    static var logToFile = false
-    
-    static var logDestination: URL?
+//    static let logToFile = false
+//    
+//    static let logDestination: URL?
     
     
     /// heading is the first word describing message for [Error] for error level, used by default because alhough in terminal colors are seen, Xcode terminal doesn't show them
-    static var printHeading: Bool = true
+    static let printHeading: Bool = true
     
     
     static func trace(_ message: Str,

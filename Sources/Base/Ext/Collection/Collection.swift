@@ -260,17 +260,6 @@ public extension Collection {
          indices.contains(idx) ? self[idx] : nil
     }
     
-    
-    ///  Performs each closure for each unit of collection in parallel.
-    func forEachInParallel(_ each: (Iterator.Element) -> Void) {
-        let indices = indicesArray
-        
-        DispatchQueue.concurrentPerform(iterations: indices.count) { idx in
-            let elementIdx = indices[idx]
-            each(self[elementIdx])
-        }
-    }
-    
     private var indicesArray: [Index] {
         var indices: [Index] = []
         var anIdx = startIndex

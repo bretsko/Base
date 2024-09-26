@@ -31,15 +31,15 @@ public extension Str {
 //  https://github.com/m09/syllable-counter
 
 
-fileprivate class SyllableCounter {
+fileprivate final class SyllableCounter {
     
     // MARK: - Shared instance
     
-    static let shared = SyllableCounter()
+    nonisolated(unsafe) static let shared = SyllableCounter()
     
     // MARK: -  properties
     
-    var exceptions: [Str: Int] = [
+    let exceptions: [Str: Int] = [
         "brutes": 1,
         "chummed": 1,
         "flapped": 1,

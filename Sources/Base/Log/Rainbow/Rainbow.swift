@@ -13,10 +13,10 @@ public extension L {
         
         /// Output target for `L.Rainbow`. `L.Rainbow` should detect correct target itself, so you rarely need to set it.
         /// However, if you want the colorized string to be different, or the detection is not correct, you can set it manually.
-        public static var outputTarget = OutputTarget.current
+        public static let outputTarget = OutputTarget.current
         
         /// Enable `L.Rainbow` to colorize string or not. Default is `true`.
-        public static var enabled = true
+        public static let enabled = true
         
         public static func extractModes(for str: Str)
         -> (color: Color?, backgroundColor: BackgroundColor?,
